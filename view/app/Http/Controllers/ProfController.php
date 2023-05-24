@@ -11,6 +11,7 @@ class ProfController extends Controller {
    
     public function index()
     {
+        // reucpera os dados
         $eixos = Eixo::all();
         $professor = Prof::all();
 
@@ -19,6 +20,7 @@ class ProfController extends Controller {
 
     public function create(Request $request)
     {
+        // recupera os dados
         $dados = Eixo::all();
         return view('profs.create', (['eixos' => $dados])); 
     }
@@ -26,7 +28,7 @@ class ProfController extends Controller {
     public function store(Request $request)
     {
         Prof::create([
-            
+            // manda criar no bd
             "ativo" => $request->ativo,
             "nome" => $request->nome,
             "email" => $request->email,

@@ -15,15 +15,18 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- recebe e corre pela disciplina -->
                 @foreach ($disciplinas as $item)
                     <tr>
-                        <td class="d-none d-md-table-cell text-center">{{ $item['nome']}}</td>        
+                        <td class="d-none d-md-table-cell text-center">{{ $item['nome']}}</td>   
+                             <!-- mostra somente o nome das disciplinas -->
                         <td>
                             <select 
                                 class="form-select form-select-sm" 
-                                name="professores[]" 
+                                name="professores[]"
                                 required
                                 >
+                                <!-- cria um arrei que recebe o id de deisiciplias e de professores e envia pro controller -->
                                 <option value=""></option>
                                     @foreach ($professores as $professor)
                                         <option value="{{ $item->id.'_'.$professor->id }}" >{{ $professor->nome }}</option>
